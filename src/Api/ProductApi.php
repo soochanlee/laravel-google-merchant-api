@@ -31,7 +31,7 @@ class ProductApi extends AbstractApi{
         $instance = self::getInstance($this);
         $product = self::resolveProductInput($product);
 
-        return $instance->post($product->get());
+        return $instance->post($product->get(), 1);
     }
 
     /**
