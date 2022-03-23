@@ -171,7 +171,7 @@ abstract class AbstractApi
 	 *
 	 * @param array $args
 	 */
-	protected function setRequestArgs($args)
+	public function setRequestArgs($args)
 	{
 		if (isset($args['method'])) {
 			$this->request_method = $args['method'];
