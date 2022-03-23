@@ -171,7 +171,7 @@ abstract class AbstractApi
 	 *
 	 * @param array $args
 	 */
-	public function setRequestArgs($args)
+	protected function setRequestArgs($args)
 	{
 		if (isset($args['method'])) {
 			$this->request_method = $args['method'];
@@ -288,12 +288,13 @@ abstract class AbstractApi
 	 * @return mix
 	 * @throws \GuzzleHttp\Exception\ClientException
 	 */
-	public function post($params = array())
+	public function post($params = array(), $id = null)
 	{
 
 		$this->setRequestArgs([
 			'method' => 'POST',
 			// 'params' => $params,
+			'path'   => $id,
 			'body' => $params,
 		]);
 
