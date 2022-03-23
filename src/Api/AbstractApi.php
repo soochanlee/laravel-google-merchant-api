@@ -185,6 +185,9 @@ abstract class AbstractApi
 		if (isset($args['body'])) {
 			$this->request_body = $args['body'];
 		}
+		if (isset($args['empty_path']) AND $args['empty_path']) {
+			$this->request_path = null;
+		}
 	}
 
 
@@ -288,14 +291,14 @@ abstract class AbstractApi
 	 * @return mix
 	 * @throws \GuzzleHttp\Exception\ClientException
 	 */
-	public function post($params = array(), $id = null)
+	public function post($params = array(), $empty_path = null)
 	{
 
 		$this->setRequestArgs([
 			'method' => 'POST',
 			// 'params' => $params,
-			'path'   => $id,
 			'body' => $params,
+			'empty_path' => $empty_path
 		]);
 
 		$this->clearCallbacks();
