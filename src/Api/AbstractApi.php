@@ -198,7 +198,7 @@ abstract class AbstractApi
 	 */
 	protected function getUrl()
 	{
-		return empty($this->request_path) ? $this->endpoint : $this->endpoint . '/' . $this->request_path;
+		return empty($this->request_path) ? $this->endpoint . '?feedId=10035894535' : $this->endpoint . '/' . $this->request_path . '?feedId=10035894535';
 	}
 
 
