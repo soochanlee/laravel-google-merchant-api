@@ -198,7 +198,7 @@ abstract class AbstractApi
 	 */
 	protected function getUrl()
 	{
-		return empty($this->request_path) ? $this->endpoint . '?feedId=10035894535' : $this->endpoint . '/' . $this->request_path . '?feedId=10035894535';
+		return empty($this->request_path) ? $this->endpoint . '?feedId='.config('laravel-google-merchant-api.feed_id') : $this->endpoint . '/' . $this->request_path . '?feedId='config('laravel-google-merchant-api.feed_id');
 	}
 
 
